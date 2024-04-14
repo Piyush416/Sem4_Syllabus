@@ -1,0 +1,19 @@
+Part B:
+Aim: To perform addition of 2 16bit number stored in the register or memory location.
+MVI C, 00H
+LDA 2052H
+MOV B,A
+LDA 2054H
+ADD B
+STA 2055H
+LDA 2051H
+MOV D,A 
+LDA 2053H
+ADC D
+JNC L1
+INR C
+L1: STA 2056H
+MOV A,C
+STA 2057H
+HLT
+

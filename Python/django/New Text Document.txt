@@ -1,0 +1,6 @@
+View -> two types of view 
+1. function based view
+2. class based view
+
+1.function based view
+it is a function that takes a var responds and return a var responds is can be  html content of webpages and 404

@@ -1,0 +1,14 @@
+1: addition of two 8-bit numbers
+2: addition of two 16-bit numbers
+3: substraction of two 8-bit numbers
+4: multiplication of two 8-bit number
+5: add block of 8bit data stored in memory location 
+6: minimum number from two 8-bit numbers
+7: minimum number from a block of n 8-bit number
+8: maximum number from two 8-bit numbers
+9: maximum number from a block of n 8-bit number
+10: sort data in ascending order
+11: sort data in descending order   
+12: BCD/DECIMAL TO BINARY/HEXADEMICAL
+13: ASCII TO BINARY CONVERSTION
+14: BINARY TO ASCII CONVERSION

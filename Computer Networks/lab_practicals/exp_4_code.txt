@@ -1,0 +1,61 @@
+#include <stdio.h>
+void calculateParityBits(int codeword[7]) {
+ codeword[2] = codeword[4] ^ codeword[6];
+ codeword[1] = codeword[2] ^ codeword[4] ^ codeword[6];
+ codeword[0] = codeword[1] ^ codeword[2] ^ codeword[4] ^ codeword[6];
+}
+void hammingEncode(int message[4], int codeword[7]) {
+ codeword[2] = message[3];
+ codeword[4] = message[2];
+ codeword[5] = message[1];
+ codeword[6] = message[0];
+ calculateParityBits(codeword);
+}
+void correctError(int codeword[7], int errorPosition) {
+ codeword[errorPosition] = 1 - codeword[errorPosition];
+ printf("Corrected bit at position %d\n", errorPosition + 1);
+}
+void hammingDecode(int codeword[7], int message[4]) {
+ int parityBits[3];
+ parityBits[2] = codeword[2];
+ parityBits[1] = codeword[4];
+ parityBits[0] = codeword[6];
+ int errorPosition = parityBits[2] * 4 + parityBits[1] * 2 +
+parityBits[0];
+ if (errorPosition != 0) {
+ correctError(codeword, errorPosition - 1);
+ }
+ message[3] = codeword[2];
+ message[2] = codeword[4];
+ message[1] = codeword[5];
+ message[0] = codeword[6];
+}
+int main() {
+ int message[4] = {1, 0, 1, 1};
+ int codeword[7];
+ printf("Original Message: ");
+ for (int i = 0; i < 4; i++) {
+ printf("%d ", message[i]);
+ }
+ printf("\n");
+ hammingEncode(message, codeword);
+ printf("Encoded Codeword: ");
+ for (int i = 0; i < 7; i++) {
+ printf("%d ", codeword[i]);
+ }
+ printf("\n");
+ codeword[1] = 1 - codeword[1];
+ printf("Received Codeword: ");
+ for (int i = 0; i < 7; i++) {
+ printf("%d ", codeword[i]);
+ }
+ printf("\n");
+ int decodedMessage[4];
+ hammingDecode(codeword, decodedMessage);
+ printf("Decoded Message: ");
+ for (int i = 0; i < 4; i++) {
+ printf("%d ", decodedMessage[i]);
+ }
+ printf("\n");
+ return 0;
+}

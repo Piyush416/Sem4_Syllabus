@@ -1,0 +1,18 @@
+Question: Write an assembly language program to add block and 8bit data stored in memory location....
+
+
+
+MVI C, 00
+MVI D,05
+MVI A,00
+LXI H,2050H
+L1: ADD M
+JNC NEXT 
+INR C
+NEXT: INX H
+DCR D
+JNZ L1
+LOOP: STA 2055H
+MOV A,C
+STA 2056H
+HLT

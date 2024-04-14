@@ -1,0 +1,11 @@
+Write an assembly language program find a minimum number from two 8 bit number.
+
+
+LDA 2500H
+MOV B,A
+LDA 2501H
+CMP B
+JC LOOP
+MOV A,B
+LOOP: STA 2502H
+HLT

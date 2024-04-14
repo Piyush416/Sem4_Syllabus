@@ -1,0 +1,15 @@
+<to perform 8bit substraction>
+MVI C,00
+LXI H , 4200H
+MOV A,M
+INX H
+MOV B,M
+SUB B
+JNC L1
+INR C
+CMA
+INR A
+L1: STA 4202H
+MOV A,C
+STA 4203H
+HLT

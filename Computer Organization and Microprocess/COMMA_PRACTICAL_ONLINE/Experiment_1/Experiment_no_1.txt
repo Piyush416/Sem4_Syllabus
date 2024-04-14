@@ -1,0 +1,8 @@
+Experiment 1
+Part A:
+Aim : To perform addition of 2 8bit number using 8085.
+Part B:
+Aim: To perform addition of 2 16bit number stored in the register or memory location.
+Part C:
+Aim: To perform Substraction of 2 8bit number using 8085 microprocessor number.
+

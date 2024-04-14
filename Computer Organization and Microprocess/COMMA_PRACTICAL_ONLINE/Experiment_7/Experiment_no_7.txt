@@ -1,0 +1,18 @@
+Write an assembly language program to find minimum no from a series of 8 bit numbers.
+
+MVI C, 04H
+MVI A,00H
+LXI H,4200H
+MOV A,M
+LOOP: INX H
+CMP M
+JC AHEAD
+MOV A,M
+DCR C
+JNZ LOOP
+STA 420AH
+JMP LAST
+AHEAD: DCR C
+JNZ LOOP
+STA 420AH
+LAST: HLT

@@ -1,0 +1,5 @@
+# To create virtual Environment
+python -m venv myenv
+
+# To activate venv
+.\myenv\Scripts\Activate.ps1

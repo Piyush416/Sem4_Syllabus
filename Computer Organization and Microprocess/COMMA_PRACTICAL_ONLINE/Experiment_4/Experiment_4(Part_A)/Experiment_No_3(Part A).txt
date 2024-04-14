@@ -1,0 +1,17 @@
+Question: Write a assembly language program to perform multiplication of two 8 bit numbers
+
+MVI A , 00H
+MVI D, 00H
+LXI H,4150H
+MOV B, M
+INX H
+MOV C,M
+LOOP: ADD B
+JNC L1
+INR D
+L1: DCR C
+JNZ LOOP
+STA 4152H
+MOV A,D
+STA 4153H
+HLT

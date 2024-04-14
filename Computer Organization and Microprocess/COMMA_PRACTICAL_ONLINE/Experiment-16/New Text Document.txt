@@ -1,0 +1,9 @@
+Experiment16: Binary to ASCII Code 
+
+LDA 2050H
+CPI 0AH
+JC L1
+ADI 07H
+L1: ADI 30H
+STA 2052H
+HLT

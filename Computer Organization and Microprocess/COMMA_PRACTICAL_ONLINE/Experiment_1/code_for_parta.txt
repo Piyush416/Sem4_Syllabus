@@ -1,0 +1,14 @@
+Part A:
+Aim : To perform addition of 2 8bit number using 8085.
+
+MVI C,00H
+LDA 2150H
+MOV B,A
+LDA 2151H
+ADD B
+JNC L1
+INR C
+L1: STA 2152H
+MOV A,C
+STA 2153H
+HLT
